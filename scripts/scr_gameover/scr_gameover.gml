@@ -26,7 +26,7 @@ function scr_gameover()
         global.tempflag[9] = 1;
         global.fighting = 0;
         global.interact = 0;
-        for (var i = 0; i < DRHero.__MAX__; i++)
+        for (var i = 0; i < DRCharacter.__MAX__; i++)
 			global.hp[i] = 1;
         __room = room;
         

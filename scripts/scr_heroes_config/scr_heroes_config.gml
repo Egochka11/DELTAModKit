@@ -1,14 +1,3 @@
-enum DRHero {
-	Kris = 0,
-	Susie = 1,
-	Ralsei = 2,
-	Noelle = 3,
-	
-	Starwalker = 4,
-	
-	__MAX__ = 5,
-}
-
 enum DRCharacter {
 	None = 0,
 	Kris = 1,
@@ -22,7 +11,7 @@ enum DRCharacter {
 }
 
 function scr_hero_has_pacify(heroIdx) {
-	return heroIdx == DRHero.Ralsei || heroIdx == DRHero.Noelle;
+	return heroIdx == DRCharacter.Ralsei || heroIdx == DRCharacter.Noelle;
 }
 
 function scr_character_is_lightner(charIdx) {
@@ -31,8 +20,8 @@ function scr_character_is_lightner(charIdx) {
 
 function scr_hero_get_pacify_spell_cost(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Ralsei: return 40;
-		case DRHero.Noelle: return 80;
+		case DRCharacter.Ralsei: return 40;
+		case DRCharacter.Noelle: return 80;
 		
 		default: return -1;
 	}
@@ -40,7 +29,7 @@ function scr_hero_get_pacify_spell_cost(heroIdx) {
 
 function scr_hero_uses_acts_instead_of_spells(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Kris: return true;
+		case DRCharacter.Kris: return true;
 		
 		default: return false;
 	}
@@ -48,12 +37,12 @@ function scr_hero_uses_acts_instead_of_spells(heroIdx) {
 
 function scr_hero_get_color(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Kris:	return c_aqua;
-		case DRHero.Susie:	return c_fuchsia;
-		case DRHero.Ralsei: return c_lime;
-		case DRHero.Noelle: return c_yellow;
+		case DRCharacter.Kris:	return c_aqua;
+		case DRCharacter.Susie:	return c_fuchsia;
+		case DRCharacter.Ralsei: return c_lime;
+		case DRCharacter.Noelle: return c_yellow;
 		
-		case DRHero.Starwalker: return c_yellow;
+		case DRCharacter.Starwalker: return c_yellow;
 		
 		default: return c_white;
 	}
@@ -61,9 +50,9 @@ function scr_hero_get_color(heroIdx) {
 
 function scr_hero_get_attackbackground_color(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Kris:	return c_blue;
-		case DRHero.Susie:	return c_purple;
-		case DRHero.Ralsei: return c_green;
+		case DRCharacter.Kris:	return c_blue;
+		case DRCharacter.Susie:	return c_purple;
+		case DRCharacter.Ralsei: return c_green;
 		
 		default: return scr_hero_get_color(heroIdx);
 	}
@@ -71,12 +60,12 @@ function scr_hero_get_attackbackground_color(heroIdx) {
 
 function scr_hero_get_attacktarget_color(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Kris:	return make_color_rgb(0, 162, 232);
-		case DRHero.Susie:	return make_color_rgb(234, 121, 200);
-		case DRHero.Ralsei: return make_color_rgb(181, 230, 29);
-		case DRHero.Noelle: return make_color_rgb(255, 255, 153);
+		case DRCharacter.Kris:	return make_color_rgb(0, 162, 232);
+		case DRCharacter.Susie:	return make_color_rgb(234, 121, 200);
+		case DRCharacter.Ralsei: return make_color_rgb(181, 230, 29);
+		case DRCharacter.Noelle: return make_color_rgb(255, 255, 153);
 		
-		case DRHero.Starwalker: return make_color_rgb(255, 255, 153);
+		case DRCharacter.Starwalker: return make_color_rgb(255, 255, 153);
 		
 		default: return c_white;
 	}
@@ -84,12 +73,12 @@ function scr_hero_get_attacktarget_color(heroIdx) {
 
 function scr_hero_get_battle_instance(heroIdx) {
 	switch (heroIdx) {
-		case DRHero.Kris:	return obj_herokris;
-		case DRHero.Susie:	return obj_herosusie;
-		case DRHero.Ralsei: return obj_heroralsei;
-		case DRHero.Noelle: return obj_heronoelle;
+		case DRCharacter.Kris:	return obj_herokris;
+		case DRCharacter.Susie:	return obj_herosusie;
+		case DRCharacter.Ralsei: return obj_heroralsei;
+		case DRCharacter.Noelle: return obj_heronoelle;
 		
-		case DRHero.Starwalker: return obj_herostarwalker;
+		case DRCharacter.Starwalker: return obj_herostarwalker;
 		
 		default: return obj_herokris;
 	}
@@ -98,32 +87,32 @@ function scr_hero_get_battle_instance(heroIdx) {
 function scr_hero_get_nameplate(heroIdx) {
 	switch (heroIdx) {
 		default:
-		case DRHero.Kris: {
+		case DRCharacter.Kris: {
 			headspr = spr_headkris;
 			namespr = spr_bnamekris;
 			break;	
 		}
 		
-		case DRHero.Susie: {
+		case DRCharacter.Susie: {
 			headspr = spr_headsusie;
 			namespr = spr_bnamesusie;
 			break;
 		}
 				
-		case DRHero.Ralsei: {
+		case DRCharacter.Ralsei: {
 			headspr = spr_headralsei;
 			namespr = spr_bnameralsei;
 			break;
 		}
 				
-		case DRHero.Noelle: {
+		case DRCharacter.Noelle: {
 			headspr = spr_headnoelle;
 			namespr = spr_bnamenoelle;
 			break;
 		}
 		
 		// mod
-		case DRHero.Starwalker: {
+		case DRCharacter.Starwalker: {
 			headspr = spr_headstarwalker;
 			namespr = spr_bnamestarwalker;
 			break;

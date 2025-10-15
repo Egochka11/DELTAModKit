@@ -400,9 +400,9 @@ function scr_saveprocess(arg0) {
         ossafe_file_text_writeln(myfileid);
     }
     
-    ossafe_file_text_write_string(myfileid, "CHARACTERAMT: " + string(DRHero.__MAX__));
+    ossafe_file_text_write_string(myfileid, "CHARACTERAMT: " + string(DRCharacter.__MAX__));
             ossafe_file_text_writeln(myfileid);
-    for (i = 0; i < DRHero.__MAX__; i++)
+    for (i = 0; i < DRCharacter.__MAX__; i++)
     {
         if (!global.is_console)
         {

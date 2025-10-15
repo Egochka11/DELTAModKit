@@ -61,7 +61,7 @@ fadeamt = 0;
 fakefade = 0;
 bcolor = c_navy;
 
-for (i = 0; i < DRHero.__MAX__; i++) {
+for (i = 0; i < DRCharacter.__MAX__; i++) {
 	charcolor[i] = scr_hero_get_color(i);
 	boltcolor[i] = merge_color(charcolor[i], c_white, 0.5);
 }

@@ -45,7 +45,7 @@ if (active == 1)
             j = global.char[i];
             fullbox = 0;
 			
-			var _col = scr_hero_get_attackbackground_color(j - 1);
+			var _col = scr_hero_get_attackbackground_color(j);
 			draw_set_color(_col);
 			
 			if (pressbuffer[clamp(j, 0, 3)])
@@ -55,7 +55,7 @@ if (active == 1)
             draw_rectangle(x + 79, y + (38 * i) + 2, (x + 80 + (15 * boltspeed)) - 1, y + (38 * i) + 35, true);
             //draw_sprite(spr_pressfront, j - 1, x, y + (38 * i));
 			
-			scr_hero_get_nameplate(j - 1);
+			scr_hero_get_nameplate(j);
 			draw_sprite(headspr, 0, x + 4, y + (38 * i) + 7);
             
             if (global.flag[13] == 0)
@@ -66,18 +66,18 @@ if (active == 1)
             
             //draw_sprite(spr_pressspot, j - 1, x + 80, y + (38 * i));
 			//draw_sprite(spr_pressspot, 4, x + 80, y + (38 * i));
-			var presspot_width = 10
-			var presspot_height = 38
+			var presspot_width = 10;
+			var presspot_height = 38;
 			
-			var _x2 = x + 80 + presspot_width
-			var _y2 = y + presspot_height + (38 * i)
-			var _pressspot_col = scr_hero_get_attacktarget_color(j - 1)
-			draw_set_color(_pressspot_col)
-			draw_rectangle(x + 80, y + (38 * i), _x2, _y2, false)
+			var _x2 = x + 80 + presspot_width;
+			var _y2 = y + presspot_height + (38 * i);
+			var _pressspot_col = scr_hero_get_attacktarget_color(j);
+			draw_set_color(_pressspot_col);
+			draw_rectangle(x + 80, y + (38 * i), _x2, _y2, false);
 			
-			draw_set_color(c_black)
-			draw_rectangle(x + 82, y + (38 * i) + 2, _x2 - 2, _y2 - 2, false)
-			draw_set_color(c_white)
+			draw_set_color(c_black);
+			draw_rectangle(x + 82, y + (38 * i) + 2, _x2 - 2, _y2 - 2, false);
+			draw_set_color(c_white);
         }
     }
     

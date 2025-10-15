@@ -29,7 +29,7 @@ tpy = 50;
 bp = 0;
 bpy = 152;
 
-for (p = 0; p < DRHero.__MAX__; p++) {
+for (p = 0; p < DRCharacter.__MAX__; p++) {
 	mmy[p] = 0;
 	havechar[p] = 0;
 }
@@ -50,8 +50,8 @@ for (var i = 0; i < 3; i += 1)
 	if (global.char[i] == DRCharacter.None) continue;
 	
 	chartotal++;
-	havechar[global.char[i] - 1] = 1;
-    charpos[global.char[i] - 1] = i;
+	havechar[global.char[i]] = 1;
+    charpos[global.char[i]] = i;
         
     if (i > 0 )//&& global.char[i] != DRCharacter.Kris)
     {
@@ -75,7 +75,7 @@ pagemax[1] = 0;
 getmusvol = 1;
 curvol = 1;
 
-for (p = 0; p < DRHero.__MAX__; p++)
+for (p = 0; p < DRCharacter.__MAX__; p++)
 	hpcolor[p] = scr_hero_get_color(p);
 	
 menu_sprite = spr_darkmenudesc;

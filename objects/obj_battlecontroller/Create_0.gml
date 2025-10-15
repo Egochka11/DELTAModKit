@@ -159,7 +159,7 @@ bpy = 152;
 intro = 1;
 chartotal = 0;
 
-for (i = 0; i < DRHero.__MAX__; i++) {
+for (i = 0; i < DRCharacter.__MAX__; i++) {
 	charpos[i] = -1;
 	havechar[i] = 0;
 	mmy[i] = 0;
@@ -185,9 +185,9 @@ for (i = 0; i < 3; i += 1)
 	var charhere = global.char[i];
 	
     chartotal += 1;
-	havechar[charhere - 1] = 1;
-    charpos[charhere - 1] = i;
-    global.charinstance[i] = instance_create(global.heromakex[i], global.heromakey[i], scr_hero_get_battle_instance(charhere - 1));
+	havechar[charhere] = 1;
+    charpos[charhere] = i;
+    global.charinstance[i] = instance_create(global.heromakex[i], global.heromakey[i], scr_hero_get_battle_instance(charhere));
     global.charinstance[i].myself = i;
     global.charinstance[i].char = charhere;
     global.charinstance[i].depth = 200 - (i * 20);
@@ -202,7 +202,7 @@ reset = 0;
 timeron = 1;
 noreturn = 0;
 
-for (i = 0; i < DRHero.__MAX__; i++) {
+for (i = 0; i < DRCharacter.__MAX__; i++) {
 	hpcolor[i] = scr_hero_get_color(i);	
 	hpcolorsoft[i] = merge_color(hpcolor[i], c_white, 0.5);
 }

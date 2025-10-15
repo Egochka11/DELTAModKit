@@ -160,7 +160,7 @@ if (global.bmenuno == 1 || global.bmenuno == 3 || global.bmenuno == 11 || global
 					if (__actname == scr_character_get_act_name_override(global.char[global.charturn]))
 						__actname = __plainactname;
                     
-                    draw_set_color(hpcolorsoft[global.char[global.charturn] - 1]);
+                    draw_set_color(hpcolorsoft[global.char[global.charturn]]);
                     draw_text_width(xx + 80 + namewidthmax + 60, yy + 375 + (i * 30), string_hash_to_newline(__actname), 514 - (80 + namewidthmax + 60));
                 }
                 
@@ -307,7 +307,7 @@ if (global.bmenuno == 2 && global.myfight == 0 && global.flag[34] == 0)
             draw_set_color(c_white);
             
             if (global.battlespellspecial[thischar][(page * 6) + (i * 2) + __n] >= 1)
-                draw_set_color(hpcolorsoft[global.char[thischar] - 1]);
+                draw_set_color(hpcolorsoft[global.char[thischar]]);
             
             _cant = 0;
             
