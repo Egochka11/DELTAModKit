@@ -148,24 +148,24 @@ function scr_charbox()
             draw_set_color(c_white);
             draw_set_font(global.hpfont);
             
-            if ((global.hp[c + 1] / global.maxhp[c + 1]) <= 0.25)
+            if ((global.hp[c] / global.maxhp[c]) <= 0.25)
                 draw_set_color(c_yellow);
             
-            if (global.hp[c + 1] <= 0)
+            if (global.hp[c] <= 0)
                 draw_set_color(c_red);
             
             draw_set_halign(fa_right);
-            draw_text(xx + 160 + xchunk, ((bpoff + b_offset) - 2) + mmy[c], string_hash_to_newline(global.hp[c + 1]));
+            draw_text(xx + 160 + xchunk, ((bpoff + b_offset) - 2) + mmy[c], string_hash_to_newline(global.hp[c]));
             draw_sprite(spr_hpslash, 0, xx + 159 + xchunk, ((bpoff + b_offset) - 4) + mmy[c]);
-            draw_text(xx + 205 + xchunk, ((bpoff + b_offset) - 2) + mmy[c], string_hash_to_newline(global.maxhp[c + 1]));
+            draw_text(xx + 205 + xchunk, ((bpoff + b_offset) - 2) + mmy[c], string_hash_to_newline(global.maxhp[c]));
             draw_set_halign(fa_left);
             draw_set_color(c_maroon);
             draw_rectangle(xx + 128 + xchunk, bpoff + b_offset + 11 + mmy[c], xx + 203 + xchunk, bpoff + b_offset + 19 + mmy[c], false);
             
-            if (global.hp[c + 1] > 0 && global.maxhp[c + 1] > 0)
+            if (global.hp[c] > 0 && global.maxhp[c] > 0)
             {
                 draw_set_color(charcolor);
-                draw_rectangle(xx + 128 + xchunk, bpoff + b_offset + 11 + mmy[c], xx + xchunk + 128 + ceil((global.hp[c + 1] / global.maxhp[c + 1]) * 75), bpoff + b_offset + 19 + mmy[c], false);
+                draw_rectangle(xx + 128 + xchunk, bpoff + b_offset + 11 + mmy[c], xx + xchunk + 128 + ceil((global.hp[c] / global.maxhp[c]) * 75), bpoff + b_offset + 19 + mmy[c], false);
             }
         }
     }
